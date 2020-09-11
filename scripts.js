@@ -15,4 +15,5 @@ function generateQuote(){
     document.querySelector('#quoteOutput-1').textContent = `\"${arrayOfQuotes[random].quote}\"`;
     document.querySelector('#authorOutput-1').textContent = `--${arrayOfQuotes[random].author}`;
 
+    alert('Hello test!')
 }
