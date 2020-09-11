@@ -14,10 +14,10 @@ button {
     color: white;
 }
 
-p{
-    font-size: 35px;
-}
-
-button:hover{
+button:hover {
     background-color: green;
 }
+p {
+    font-size: 32px;
+}
+
