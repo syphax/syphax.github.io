@@ -5,7 +5,8 @@
 const arrayOfQuotes = [
     {'author': 'Donald Trump, November 6, 2012',
      'quote': 'The electoral college is a disaster for a democracy.',
-     'source': 'https://twitter.com/realDonaldTrump/status/266038556504494082'},
+     'source': 'https://twitter.com/realDonaldTrump/status/266038556504494082',
+     'comment':'We concur.'},
     {'author': 'Donald Trump, March 19, 2020',
      'quote': 'I wanted to always play it down. I still like playing it down. Yes, because I don’t want to create a panic.',
      'source': 'https://www.nydailynews.com/news/politics/ny-coronavirus-trump-bob-woodward-rage-20200909-uf65ckmgxbhi5c4pgddrdhi64a-story.html'},
@@ -19,18 +20,21 @@ const arrayOfQuotes = [
      'quote': '40 Wall street actually was the second-tallest building in downtown Manhattan, and it was actually before the World Trade Center the tallest, and then when they built the World Trade Center it became known as the second-tallest, and now it’s the tallest.',
      'source': 'https://www.snopes.com/fact-check/trump-bragged-tallest-building/'},
     {'author': 'Donald Trump, July 19, 2020',
-     'quote': 'We''re signing a health care plan within two weeks, a full and complete health care plan that the Supreme Court decision on DACA gave me the right to do.',
+     'quote': 'We\'re signing a health care plan within two weeks, a full and complete health care plan that the Supreme Court decision on DACA gave me the right to do.',
      'source': 'https://www.foxnews.com/politics/transcript-fox-news-sunday-interview-with-president-trump'},
     {'author': 'Donald Trump, September 15, 2020',
-     'quote': 'We''re going to have a vaccine in a matter of weeks, it could be four weeks, it could be eight weeks',
+     'quote': 'We\'re going to have a vaccine in a matter of weeks, it could be four weeks, it could be eight weeks',
      'source': 'https://www.foxnews.com/politics/trump-fox-friends-coronavirus-vaccine-matter-weeks'},
+    {'author': 'Donald Trump, February 27, 2015',
+     'quote': 'Nobody knew health care could be so complicated',
+     'source': 'https://www.washingtonpost.com/trump-madness-2017-whats-the-quintessential-quote-of-the-trump-administration/6f1f6d1e-a24e-4628-887d-197ceb20d4f2_brackets.html',
+     'comment':'"Nobody" = "Almost everybody"'},
     {'author': 'Donald Trump, ',
      'quote': '',
      'source': ''},
     {'author': 'Donald Trump, ',
      'quote': '',
      'source': ''},
-
 ];
 
 function generateQuote(){
@@ -53,7 +57,9 @@ function generateQuote(){
 
         document.querySelector('#quoteOutput-'.concat(i_str)).textContent = i_str.concat(`. \"${arrayOfQuotes[j].quote}\"`);
         document.querySelector('#authorOutput-'.concat(i_str)).textContent = `--${arrayOfQuotes[j].author}`;
+        document.querySelector('#authorOutput-'.concat(i_str)).setAttribute('href', `${arrayOfQuotes[j].source}`);
 
+        console.log(document.querySelector('#authorOutput-'.concat(i_str)).getAttribute('href'))
         quote_index++
         if (quote_index >= len_quotes) { quote_index = 0 }
 
